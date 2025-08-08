@@ -17,4 +17,9 @@ public class Rq {
        return cmd.split("\\?")[0];
 
     }
+
+    public String getParam(String paramName){
+
+        return paramName.split("\\?")[1].split("=")[1];
+    }
 }

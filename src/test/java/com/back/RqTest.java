@@ -29,4 +29,26 @@ public class RqTest {
 
         assertThat(actionName).isEqualTo("수정");
     }
+
+    @Test
+    @DisplayName("getParam(입력값 : \"등록?이름=홍길동\") : 홍길동")
+    void t3(){
+
+        Rq rq = new Rq("");
+
+        String actionName= rq.getParam("등록?이름=홍길동");
+
+        assertThat(actionName).isEqualTo("홍길동");
+    }
+
+    @Test
+    @DisplayName("getParam(입력값: \"등록?고향=서울\": getParam(\"고향\") : 서울")
+    void t4(){
+
+        Rq rq = new Rq("");
+
+        String actionName= rq.getParam("등록?고향=서울");
+
+        assertThat(actionName).isEqualTo("서울");
+    }
 }
